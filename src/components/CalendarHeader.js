@@ -47,7 +47,7 @@ export default function CalendarHeader() {
 
   return (
     <>
-    <header className="px-4 py-2 flex items-center">
+    <header className="px-0 py-2 flex items-center">
       
       <button onClick={handlePrevMonth}>
         <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2 my-2">
