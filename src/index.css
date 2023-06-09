@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.initial-avatar {
+    /* Center the content */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    /* Colors */
+    color: #fff;
+
+    /* Rounded border */
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+}
