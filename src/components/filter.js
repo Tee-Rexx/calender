@@ -134,7 +134,6 @@ export default function Filter() {
         <div className="p-3 items-center d-flex grid grid-cols-2 gap-4">
           <div className="col-start-2">
             <img
-              className="float-right"
               src="https://cdn-icons-png.flaticon.com/512/1159/1159641.png"
               width={30}
               height={40}
@@ -155,10 +154,10 @@ export default function Filter() {
                   Talents:
                 </div>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height:"40px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       <FaCaretDown
-                        className="h-5 w-5 mb-3 text-black"
+                        className="h-5 w-5 text-black"
                         aria-hidden="true"
                       />
                     </span>
@@ -351,11 +350,11 @@ export default function Filter() {
                   Managed by:
                 </div>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height:"40px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       <FaCaretDown
 
-                        className="h-5 w-5 mb-3 text-black"
+                        className="h-5 w-5  text-black"
                         aria-hidden="true"
                       />
                     </span>
@@ -545,10 +544,10 @@ export default function Filter() {
                   Brands:
                 </div>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height:"40px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       <FaCaretDown
-                        className="h-5 w-5 mb-3 text-black"
+                        className="h-5 w-5  text-black"
                         aria-hidden="true"
                       />
                     </span>
@@ -729,7 +728,7 @@ export default function Filter() {
           <input
             type="text"
             id="first_name"
-            class="col-start-2 w-50 nosubmit bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:border-2 focus:border-yellow-100 focus:ring-yellow-100"
+            class="col-start-2 w-50 nosubmit  text-gray-500 text-sm rounded-lg border-2 border-yellow-100 ring-yellow-100 focus:border-2 focus:border-yellow-100 focus:ring-yellow-100"
             placeholder="@name"
           />
         </div>
