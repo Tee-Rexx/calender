@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
+import { FaCaretDown } from "react-icons/fa";
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -131,10 +132,7 @@ export default function Filter() {
     <>
       <div className="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-3 gap-6">
         <div className="p-3 items-center d-flex grid grid-cols-2 gap-4">
-          <div className="block text-lg font-large leading-6 text-gray-900">
-            Calender
-          </div>
-          <div>
+          <div className="col-start-2">
             <img
               className="float-right"
               src="https://cdn-icons-png.flaticon.com/512/1159/1159641.png"
@@ -159,8 +157,8 @@ export default function Filter() {
                 <div className="relative mt-2 col-span-3">
                   <Listbox.Button className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
-                      <ChevronDownIcon
-                        className="h-5 w-5 mb-3 text-gray-400"
+                      <FaCaretDown
+                        className="h-5 w-5 mb-3 text-black"
                         aria-hidden="true"
                       />
                     </span>
@@ -355,8 +353,9 @@ export default function Filter() {
                 <div className="relative mt-2 col-span-3">
                   <Listbox.Button className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
-                      <ChevronDownIcon
-                        className="h-5 w-5 mb-3 text-gray-400"
+                      <FaCaretDown
+
+                        className="h-5 w-5 mb-3 text-black"
                         aria-hidden="true"
                       />
                     </span>
@@ -548,8 +547,8 @@ export default function Filter() {
                 <div className="relative mt-2 col-span-3">
                   <Listbox.Button className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
-                      <ChevronDownIcon
-                        className="h-5 w-5 mb-3 text-gray-400"
+                      <FaCaretDown
+                        className="h-5 w-5 mb-3 text-black"
                         aria-hidden="true"
                       />
                     </span>
