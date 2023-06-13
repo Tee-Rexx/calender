@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { FaCaretDown } from "react-icons/fa";
+import {filter} from "../assets/filter.png"
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -82,6 +83,15 @@ function getAvatar(name) {
     return name[0]?.toUpperCase();
   }
 }
+function getName(name) {
+  const avatar = [];
+  const s = name.split(" ");
+  if (s.length > 1) {
+    return `${s[0]?.toUpperCase()} `;
+  } else {
+    return name[0]?.toUpperCase();
+  }
+}
 
 export default function Filter() {
   const [selectedTalents, setSelectedTalents] = useState([]);
@@ -91,23 +101,23 @@ export default function Filter() {
   function selection(e, s) {
     const asd = e.find((v) => v.name === "all");
     if (asd) {
-      if(selectedTalents.length==people.length){
+      if (selectedTalents.length == people.length) {
         setSelectedTalents([]);
-      }else{
+      } else {
         setSelectedTalents(people);
-       }
+      }
     } else {
       setSelectedTalents(e);
     }
   }
   function ManageSelection(e) {
     const asd = e.find((v) => v.name === "all");
-    
+
     if (asd) {
-      if(selectedManage.length==people.length){
+      if (selectedManage.length == people.length) {
         setSelectedManage([]);
-      }else{
-     setSelectedManage(people);
+      } else {
+        setSelectedManage(people);
       }
     } else {
       setSelectedManage(e);
@@ -115,14 +125,13 @@ export default function Filter() {
   }
   function BrandSelection(e) {
     const asd = e.find((v) => v.name === "all");
-   
+
     if (asd) {
-      if(selectedBrands.length==people.length){
+      if (selectedBrands.length == people.length) {
         setSelectedBrands([]);
-      }else{
+      } else {
         setSelectedBrands(people);
-       }
-      
+      }
     } else {
       setSelectedBrands(e);
     }
@@ -130,9 +139,10 @@ export default function Filter() {
 
   return (
     <>
-      <div className="grid grid-cols-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-3 gap-6">
-        <div className="p-3 items-center d-flex grid grid-cols-2 gap-4">
-          <div className="col-start-2">
+      <div className="p-3 flex justify-between  w-full">
+        <div className="w-3/5 flex items-center justify-between">
+          <div>
+          <div>
             <img
               src="https://cdn-icons-png.flaticon.com/512/1159/1159641.png"
               width={30}
@@ -141,8 +151,9 @@ export default function Filter() {
               title="Filter free icon"
             />
           </div>
-        </div>
-        <div className="p-3 d-flex items-center grid grid-cols-4 gap-4">
+          </div>
+          <div className="flex items-center justify-between w-11/12">
+          <div className="flex items-center justify-between">
           <Listbox
             value={selectedTalents}
             onChange={selection}
@@ -150,50 +161,63 @@ export default function Filter() {
           >
             {({ open }) => (
               <>
-                <div className=" block text-md font-medium leading-6 pl-4 text-gray-900">
-                  Talents:
-                </div>
+                <div className="relative flex items-center text-sm font-small whitespace-nowrap w-70  leading-6 text-gray-900">
+                 Talents:
+                  <span className="font-semibold">
+                  {selectedTalents.map((person, index) => {
+                          if (index <= 0) {
+                            return (
+                              <p>
+                              {getName(person.name)}
+                             </p>
+                            );
+                          }
+                        })}
+                        </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height:"40px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       <FaCaretDown
-                        className="h-5 w-5 text-black"
+                        className="h-5 w-5  text-black"
                         aria-hidden="true"
                       />
                     </span>
                     <span className="flex items-center ml-3">
-                      <div className="flex -space-x-2 overflow-hidden">
-                        {selectedTalents.map((person, index) => {
-                          if (index <= 4) {
-                            return (
-                              <div>
-                                <img
-                                  src={person.avatar}
-                                  alt=""
-                                  className="inline-block h-8 w-8 rounded-full border-2 border-green-900 ring-2 ring-white"
-                                />
-                              </div>
-                            );
-                          }
-                        })}
+                    <div className="flex -space-x-2 overflow-hidden">
+                          {selectedTalents.map((person, index) => {
+                            if (index <= 4) {
+                              return (
+                                <div>
+                                  <img
+                                    src={person.avatar}
+                                    alt=""
+                                    className="inline-block h-8 w-8 rounded-full border-2 border-green-900 ring-2 ring-white"
+                                  />
+                                </div>
+                              );
+                            }
+                          })}
 
-                        {selectedTalents.length > 5 && (
-                          <p  className="inline-block h-8 w-8 rounded-full border-2 border-red-500 text-center pt-1 text-white bg-red-300 ">
-                            +{selectedTalents.length - 5}
-                          </p>
-                        )}
-                      </div>
+                          {selectedTalents.length > 5 && (
+                            <p className="inline-block h-8 w-8 rounded-full border-2 border-red-500 text-center pt-1 text-white bg-red-300 ">
+                              +{selectedTalents.length - 5}
+                            </p>
+                          )}
+                        </div>
                     </span>
                   </Listbox.Button>
 
-                  <Transition
+                </div>
+                <Transition
                     show={open}
                     as={Fragment}
                     leave="transition ease-in duration-100"
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="absolute top-12 z-10 mt-1 max-h-80 w-full  rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <div className="p-3 text-gray-800">Filter Talents</div>
+                      
                       <Listbox.Option
                         className={({ active }) =>
                           classNames(
@@ -208,7 +232,7 @@ export default function Filter() {
                         {({ selected, active }) => {
                           return (
                             <>
-                              {selectedTalents.length ==
+                              {selectedTalents.length ===
                               people.length ? (
                                 <span
                                   className={classNames(
@@ -252,7 +276,7 @@ export default function Filter() {
                                     "ml-3 block truncate"
                                   )}
                                 >
-                                  Show All ({people.length})
+                                  <p className="font-semibold">Show All ({people.length} People)</p>
                                 </span>
                               </div>
                             </>
@@ -260,6 +284,7 @@ export default function Filter() {
                         }}
                       </Listbox.Option>
                       <hr class="my-3 h-0.5 border-0 bg-gray-400 opacity-20" />
+                      <div className="scroll-bar overflow-auto h-44">
                       {people.map((person) => (
                         <Listbox.Option
                           key={person.id}
@@ -330,15 +355,15 @@ export default function Filter() {
                           )}
                         </Listbox.Option>
                       ))}
+                      </div>
                     </Listbox.Options>
                   </Transition>
-                </div>
+                  </div>
               </>
             )}
-          </Listbox>
-        </div>
-
-        <div className="p-3 d-flex items-center grid grid-cols-4 gap-2">
+          </Listbox>          
+          </div>
+          <div className="flex items-center justify-between">
           <Listbox
             value={selectedManage}
             onChange={ManageSelection}
@@ -346,14 +371,23 @@ export default function Filter() {
           >
             {({ open }) => (
               <>
-                <div className=" block text-sm font-small whitespace-nowrap  leading-6 text-gray-900">
+                <div className="relative flex items-center text-sm font-small whitespace-nowrap w-70  leading-6 text-gray-900">
                   Managed by:
-                </div>
+                  <span className="font-semibold">
+                  {selectedManage.map((person, index) => {
+                          if (index <= 0) {
+                            return (
+                              <p>
+                              {getName(person.name)}
+                             </p>
+                            );
+                          }
+                        })}
+                        </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height:"40px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       <FaCaretDown
-
                         className="h-5 w-5  text-black"
                         aria-hidden="true"
                       />
@@ -381,14 +415,17 @@ export default function Filter() {
                     </span>
                   </Listbox.Button>
 
-                  <Transition
+                </div>
+                <Transition
                     show={open}
                     as={Fragment}
                     leave="transition ease-in duration-100"
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="absolute top-12 z-10 mt-1 max-h-80 w-full  rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <div className="p-3 text-gray-800">Filter By Manager</div>
+                      
                       <Listbox.Option
                         className={({ active }) =>
                           classNames(
@@ -447,7 +484,7 @@ export default function Filter() {
                                     "ml-3 block truncate"
                                   )}
                                 >
-                                  Show All ({people.length})
+                                  <p className="font-semibold">Show All ({people.length} Manager)</p>
                                 </span>
                               </div>
                             </>
@@ -455,6 +492,7 @@ export default function Filter() {
                         }}
                       </Listbox.Option>
                       <hr class="my-3 h-0.5 border-0 bg-gray-400 opacity-20" />
+                      <div className="scroll-bar overflow-auto h-44">
                       {people.map((person) => (
                         <Listbox.Option
                           key={person.id}
@@ -525,14 +563,15 @@ export default function Filter() {
                           )}
                         </Listbox.Option>
                       ))}
+                      </div>
                     </Listbox.Options>
                   </Transition>
-                </div>
+                  </div>
               </>
             )}
-          </Listbox>
-        </div>
-        <div className="p-3 d-flex items-center grid grid-cols-4 gap-1">
+          </Listbox>          
+          </div>
+          <div className="flex items-center justify-between">
           <Listbox
             value={selectedBrands}
             onChange={BrandSelection}
@@ -540,11 +579,21 @@ export default function Filter() {
           >
             {({ open }) => (
               <>
-                <div className="whitespace-nowrap block pl-6 text-sm font-small leading-6 text-gray-900">
+                <div className="relative flex items-center text-sm font-small whitespace-nowrap w-70  leading-6 text-gray-900">
                   Brands:
-                </div>
+                  <span className="font-semibold">
+                  {selectedBrands.map((person, index) => {
+                          if (index <= 0) {
+                            return (
+                              <p>
+                              {getName(person.name)}
+                             </p>
+                            );
+                          }
+                        })}
+                        </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height:"40px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       <FaCaretDown
                         className="h-5 w-5  text-black"
@@ -552,7 +601,7 @@ export default function Filter() {
                       />
                     </span>
                     <span className="flex items-center ml-3">
-                      <div className="flex -space-x-2 overflow-hidden">
+                    <div className="flex -space-x-2 overflow-hidden">
                       {selectedBrands.map((person, index) => {
                           if (index <= 4) {
                             return (
@@ -574,14 +623,17 @@ export default function Filter() {
                     </span>
                   </Listbox.Button>
 
-                  <Transition
+                </div>
+                <Transition
                     show={open}
                     as={Fragment}
                     leave="transition ease-in duration-100"
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="absolute top-12 z-10 mt-1 max-h-80 w-full  rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <div className="p-3 text-gray-800">Filter By Brand</div>
+                      
                       <Listbox.Option
                         className={({ active }) =>
                           classNames(
@@ -593,59 +645,62 @@ export default function Filter() {
                         }
                         value={{ id: 0, name: "all", avatar: "" }}
                       >
-                        {({ selected, active }) => (
-                          <>
-                            {selectedBrands.length ==
-                            people.length ? (
-                              <span
-                                className={classNames(
-                                  active
-                                    ? "text-white"
-                                    : "text-indigo-600",
-                                  "absolute inset-y-0 left-0 flex items-center pl-3"
-                                )}
-                              >
-                                <CheckIcon
-                                  className="h-5 w-5 bg-red-300 text-white rounded"
-                                  aria-hidden="true"
-                                />
-                              </span>
-                            ) : null}
-                            {!selected ? (
-                              <span
-                                className={classNames(
-                                  active
-                                    ? "text-white"
-                                    : "text-indigo-600",
-                                  "absolute inset-y-0 left-0 flex items-center pl-3"
-                                )}
-                              >
-                                <div
-                                  className="h-5 w-5 border-2 border-gray-300 rounded"
-                                  aria-hidden="true"
-                                />
-                              </span>
-                            ) : null}
+                        {({ selected, active }) => {
+                          return (
+                            <>
+                              {selectedBrands.length ===
+                              people.length ? (
+                                <span
+                                  className={classNames(
+                                    active
+                                      ? "text-white"
+                                      : "text-indigo-600",
+                                    "absolute inset-y-0 left-0 flex items-center pl-3"
+                                  )}
+                                >
+                                  <CheckIcon
+                                    className="h-5 w-5 bg-red-300 text-white rounded"
+                                    aria-hidden="true"
+                                  />
+                                </span>
+                              ) : null}
+                              {!selected ? (
+                                <span
+                                  className={classNames(
+                                    active
+                                      ? "text-white"
+                                      : "text-indigo-600",
+                                    "absolute inset-y-0 left-0 flex items-center pl-3"
+                                  )}
+                                >
+                                  <div
+                                    className="h-5 w-5 border-2 border-gray-300 rounded"
+                                    aria-hidden="true"
+                                  />
+                                </span>
+                              ) : null}
 
-                            <div
-                              className="flex items-center pl-7
+                              <div
+                                className="flex items-center pl-7
                               "
-                            >
-                              <span
-                                className={classNames(
-                                  selected
-                                    ? "font-semibold"
-                                    : "font-normal",
-                                  "ml-3 block truncate"
-                                )}
                               >
-                                Show All ({people.length})
-                              </span>
-                            </div>
-                          </>
-                        )}
+                                <span
+                                  className={classNames(
+                                    selected
+                                      ? "font-semibold"
+                                      : "font-normal",
+                                    "ml-3 block truncate"
+                                  )}
+                                >
+                                <p className="font-semibold">Show All ({people.length} Brands)</p>
+                                </span>
+                              </div>
+                            </>
+                          );
+                        }}
                       </Listbox.Option>
                       <hr class="my-3 h-0.5 border-0 bg-gray-400 opacity-20" />
+                      <div className="scroll-bar overflow-auto h-44">
                       {people.map((person) => (
                         <Listbox.Option
                           key={person.id}
@@ -716,22 +771,22 @@ export default function Filter() {
                           )}
                         </Listbox.Option>
                       ))}
+                      </div>
                     </Listbox.Options>
                   </Transition>
-                </div>
+                  </div>
               </>
             )}
-          </Listbox>
+          </Listbox>          
+          </div>
+          </div>
         </div>
-
-        <div className="p-3  grid grid-cols-2 gap-4 nosubmit">
-          <input
+        <div> <input
             type="text"
             id="first_name"
             class="col-start-2 w-50 nosubmit  text-gray-500 text-sm rounded-lg border-2 border-yellow-100 ring-yellow-100 focus:border-2 focus:border-yellow-100 focus:ring-yellow-100"
             placeholder="@name"
-          />
-        </div>
+          /></div>
       </div>
     </>
   );
