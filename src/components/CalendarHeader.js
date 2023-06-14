@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import GlobalContext from "../context/GlobalContext";
 export default function CalendarHeader() {
-  const { monthIndex, setMonthIndex} = useContext(GlobalContext);
+  const { monthIndex, setMonthIndex, setYearIndex} = useContext(GlobalContext);
   const [years, setYears] = useState()
 
   const [selectedMonthYear, setSelectedMonthYear] = useState(dayjs().format('MMM YYYY'))
@@ -39,6 +39,7 @@ export default function CalendarHeader() {
   const keyChange = (data) => {
     setMonthIndex(parseInt(data?.monthIndex) -1);
     setSelectedMonthYear(data?.text)
+    setYearIndex(parseInt(data?.yearIndex))
   }
 
   useEffect(() => {
