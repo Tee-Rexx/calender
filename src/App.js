@@ -20,7 +20,7 @@ function App() {
     <React.Fragment>
       {showEventModal && <EventModal />}
       {/* <Filter/> */}
-      <div className="mt-2 h-screen flex flex-col">
+      <div className="h-screen flex flex-col">
       
         {/* <CalendarHeader /> */}
         <div className="flex flex-1">
