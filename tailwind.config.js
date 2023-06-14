@@ -5,7 +5,9 @@ const labelsClasses = [
   "blue",
   "red",
   "purple",
-  "peach"
+  "peach",
+  "dark-green",
+  "beige"
 ];
 
 module.exports = {
@@ -28,6 +30,8 @@ module.exports = {
       
       colors: {
         'peach': '#efb6b0',
+        'beige' : '#dac58c',
+        'dark-green' : '#44554a'
       },
 
       gridTemplateColumns: {

@@ -40,17 +40,17 @@ export default function Day({ day, rowIdx }) {
     <div className="border border-gray-200 flex flex-col">
       <header className="flex flex-col items-center" style={{ backgroundColor: '#faf4ee' }}>
         {rowIdx === 0 && (
-          <p className="text-sm mt-1">
+          <p style={{color:'#44554a'}} className=" font-semibold text-sm mt-1">
             {day.format("dddd")?.toUpperCase()}
           </p>
         )}
 
       </header>
 
-      <div className="">
+      <div>
 
-        <p
-          className={`text-sm p-1 my-1 items-end text-right mr-5  ${getCurrentDayClass()}`}
+        <p style={{color:'#44554a'}}
+          className={`text-sm font-semibold p-1 my-1 items-end text-right mr-5  ${getCurrentDayClass()}`}
         >
           {day.format("D")}
         </p>
