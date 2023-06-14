@@ -1,7 +1,8 @@
 import dayjs from "dayjs";
 import React, { useContext, useState, useEffect } from "react";
-import logo from "../assets/logo.png";
 import GlobalContext from "../context/GlobalContext";
+import left from "../assets/Icon ionic-ios-arrow-back.svg"
+import right from "../assets/Icon ionic-ios-arrow-back-1.svg"
 export default function CalendarHeader() {
   const { monthIndex, setMonthIndex, setYearIndex} = useContext(GlobalContext);
   const [years, setYears] = useState()
@@ -50,11 +51,12 @@ export default function CalendarHeader() {
     <>
     <header className="px-0 py-2 flex items-center">
       
-      <button onClick={handlePrevMonth}>
+      {/* <button >
         <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2 my-2">
           chevron_left
         </span>
-      </button>
+      </button> */}
+      <img src={left} onClick={handlePrevMonth} width={7} height={7} className="mx-2 my-2 cursor-pointer"/>
 
       <div  className="w-full flex flex-row items-center text-center align-middle justify-between">
 
@@ -68,11 +70,7 @@ export default function CalendarHeader() {
       }
       </div>
 
-      <button onClick={handleNextMonth}>
-        <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2 my-2">
-          chevron_right
-        </span>
-      </button>
+      <img src={right} onClick={handleNextMonth} width={7} height={7} className="mx-2 my-2 cursor-pointer"/>
 
 
     </header>

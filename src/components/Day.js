@@ -1,10 +1,7 @@
 import dayjs from "dayjs";
 import React, { useContext, useState, useEffect } from "react";
 import GlobalContext from "../context/GlobalContext";
-import { FaPlus } from "react-icons/fa";
-import Button from '@mui/material/Button';
-import { createTheme } from "@mui/material";
-import { IconButton } from '@mui/material';
+import plus from "../assets/Icon ionic-ios-add-circle-outline.svg"
 export default function Day({ day, rowIdx }) {
   const [dayEvents, setDayEvents] = useState([]);
   const {
@@ -81,11 +78,16 @@ export default function Day({ day, rowIdx }) {
 
         <div className=" items-end flex flex-row-reverse ml-7 mb-2">
 
-          <IconButton onClick={() => {
+         
+           <img 
+           style={{cursor:"pointer"}}
+           width={40}
+           height={50}
+           src={plus} 
+           onClick={() => {
             setDaySelected(day);
             setShowEventModal(true);
-          }} style={{border:'2px solid #efb6b0'}} ><FaPlus style={{color:'#efb6b0'}}/></IconButton>
-
+          }} />
         </div>
 
 

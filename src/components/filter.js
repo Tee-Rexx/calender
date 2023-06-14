@@ -1,11 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-import { FaCaretDown } from "react-icons/fa";
-import {filter} from "../assets/filter.png"
-import {
-  CheckIcon,
-  ChevronDownIcon,
-} from "@heroicons/react/20/solid";
+import filter from "../assets/Union 17.svg"
+import CaretDown from "../assets/Icon ionic-md-arrow-dropdown.svg"
+import chekBox from  "../assets/check_box.svg"
 
 const people = [
   {
@@ -144,11 +141,11 @@ export default function Filter() {
           <div>
           <div>
             <img
-              src="https://cdn-icons-png.flaticon.com/512/1159/1159641.png"
+              src={filter}
               width={30}
-              height={40}
-              alt="Filter free icon"
-              title="Filter free icon"
+              height={70}
+              alt="Filter"
+              title="Filter"
             />
           </div>
           </div>
@@ -177,10 +174,9 @@ export default function Filter() {
                 <div className="relative mt-2 col-span-3">
                   <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
-                      <FaCaretDown
-                        className="h-5 w-5  text-black"
-                        aria-hidden="true"
-                      />
+                      
+                      <img src={CaretDown} className="h-3 w-3  text-black"
+                        aria-hidden="true"/>
                     </span>
                     <span className="flex items-center ml-3">
                     <div className="flex -space-x-2 overflow-hidden">
@@ -242,10 +238,8 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-                                  <CheckIcon
-                                    className="h-5 w-5 bg-red-300 text-white rounded"
-                                    aria-hidden="true"
-                                  />
+                                   <img src={chekBox} className="h-5 w-5"/>
+                                  
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -309,10 +303,8 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-                                  <CheckIcon
-                                    className="h-5 w-5 bg-red-300 text-white rounded"
-                                    aria-hidden="true"
-                                  />
+
+                                  <img src={chekBox} className="h-5 w-5"/>
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -338,7 +330,7 @@ export default function Filter() {
                                 <img
                                   src={person.avatar}
                                   alt=""
-                                  className="h-5 w-5 flex-shrink-0 rounded-full"
+                                  className="h-9 w-9 flex-shrink-0 border-2 border-green-900 rounded-full"
                                 />
                                 <span
                                   className={classNames(
@@ -387,10 +379,8 @@ export default function Filter() {
                 <div className="relative mt-2 col-span-3">
                   <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
-                      <FaCaretDown
-                        className="h-5 w-5  text-black"
-                        aria-hidden="true"
-                      />
+                    <img src={CaretDown} className="h-3 w-3  text-black"
+                        aria-hidden="true"/>
                     </span>
                     <span className="flex items-center ml-3">
                     <div className="flex -space-x-2 overflow-hidden">
@@ -450,10 +440,7 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-                                  <CheckIcon
-                                    className="h-5 w-5 bg-red-300 text-white rounded"
-                                    aria-hidden="true"
-                                  />
+                                  <img src={chekBox} className="h-5 w-5"/>
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -517,10 +504,7 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-                                  <CheckIcon
-                                    className="h-5 w-5 bg-red-300 text-white rounded"
-                                    aria-hidden="true"
-                                  />
+                                   <img src={chekBox} className="h-5 w-5"/>
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -546,7 +530,7 @@ export default function Filter() {
                                 <img
                                   src={person.avatar}
                                   alt=""
-                                  className="h-5 w-5 flex-shrink-0 rounded-full"
+                                  className="h-9 w-9 flex-shrink-0 border-4 border-green-900 rounded-full border-"
                                 />
                                 <span
                                   className={classNames(
@@ -595,10 +579,8 @@ export default function Filter() {
                 <div className="relative mt-2 col-span-3">
                   <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
-                      <FaCaretDown
-                        className="h-5 w-5  text-black"
-                        aria-hidden="true"
-                      />
+                    <img src={CaretDown} className="h-3 w-3  text-black"
+                        aria-hidden="true"/>
                     </span>
                     <span className="flex items-center ml-3">
                     <div className="flex -space-x-2 overflow-hidden">
@@ -658,10 +640,7 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-                                  <CheckIcon
-                                    className="h-5 w-5 bg-red-300 text-white rounded"
-                                    aria-hidden="true"
-                                  />
+                                  <img src={chekBox} className="h-5 w-5"/>
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -725,10 +704,7 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-                                  <CheckIcon
-                                    className="h-5 w-5 bg-red-300 text-white rounded"
-                                    aria-hidden="true"
-                                  />
+                                   <img src={chekBox} className="h-5 w-5"/>
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -751,10 +727,10 @@ export default function Filter() {
                                 className="flex items-center pl-7
                               "
                               >
-                                <img
+                                 <img
                                   src={person.avatar}
                                   alt=""
-                                  className="h-5 w-5 flex-shrink-0 rounded-full"
+                                  className="h-9 w-9 flex-shrink-0 border-4 border-green-900 rounded-full"
                                 />
                                 <span
                                   className={classNames(
