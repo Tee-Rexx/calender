@@ -19,10 +19,10 @@ function App() {
   return (
     <React.Fragment>
       {showEventModal && <EventModal />}
-      <Filter/>
+      {/* <Filter/> */}
       <div className="mt-2 h-screen flex flex-col">
       
-        <CalendarHeader />
+        {/* <CalendarHeader /> */}
         <div className="flex flex-1">
           <Sidebar />
           <Month month={currenMonth} />

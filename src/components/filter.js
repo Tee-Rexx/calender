@@ -94,9 +94,9 @@ function getName(name) {
 }
 
 export default function Filter() {
-  const [selectedTalents, setSelectedTalents] = useState([]);
-  const [selectedManage, setSelectedManage] = useState([]);
-  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedTalents, setSelectedTalents] = useState([people[0],people[4],people[5],people[8]]);
+  const [selectedManage, setSelectedManage] = useState([people[0],people[4],]);
+  const [selectedBrands, setSelectedBrands] = useState([people[0],people[4],]);
 
   function selection(e, s) {
     const asd = e.find((v) => v.name === "all");
