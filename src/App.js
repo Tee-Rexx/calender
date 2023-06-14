@@ -10,10 +10,10 @@ import Filter from "./components/filter";
 
 function App() {
   const [currenMonth, setCurrentMonth] = useState(getMonth());
-  const { monthIndex, showEventModal } = useContext(GlobalContext);
+  const { monthIndex, yearIndex, showEventModal } = useContext(GlobalContext);
 
   useEffect(() => {
-    setCurrentMonth(getMonth(monthIndex));
+    setCurrentMonth(getMonth(monthIndex, yearIndex));
   }, [monthIndex]);
 
   return (
