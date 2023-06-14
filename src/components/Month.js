@@ -12,14 +12,14 @@ export default function Month({ month }) {
 
 
       
-<div class="grid flex-row w-full  h-4/5">
+<div className="flex flex-col w-full">
     <div className="w-full h-auto">
     <Filter/>
     </div>
     <div className="w-full h-auto">
     <CalendarHeader/>
     </div>
-    <div className="flex-1 h-auto  grid grid-cols-7 grid-rows-5">
+    <div className="flex-1 h-full  grid grid-cols-7 grid-rows-5">
           {month.map((row, i) => (
             <React.Fragment key={i}>
               {row.map((day, idx) => (
