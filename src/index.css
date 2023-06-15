@@ -28,7 +28,7 @@ form.nosubmit {
   }
 
   div.scroll-bar::-webkit-scrollbar {
-    width: 8px;               /* width of the entire scrollbar */
+    width: 6px;               /* width of the entire scrollbar */
   }
   
   div.scroll-bar::-webkit-scrollbar-track {
@@ -42,4 +42,19 @@ form.nosubmit {
     border: 1px solid#eeeeee;  /* creates padding around scroll thumb */
     border-radius: 50px;
   }
+
+  /* .avatar-shadow{
+    -moz-box-shadow: 0px 6px 5px #716e6e;
+  -webkit-box-shadow: 0px 6px 5px #716e6e;
+  box-shadow: 0px 6px 5px #716e6e;
+  -moz-border-radius:190px;
+  -webkit-border-radius:190px;
+  border-radius: 9999px;
+  } */
  
+  .shadow-avatar{
+    border-radius: 9999px;
+    box-shadow: -2px 10px 24px 2px rgba(105,105,105,0.6);
+-webkit-box-shadow: -2px 10px 24px 2px rgba(105,105,105,0.6);
+-moz-box-shadow: -2px 10px 24px 2px rgba(105,105,105,0.6);
+  }

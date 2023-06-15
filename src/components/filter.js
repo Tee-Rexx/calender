@@ -137,7 +137,7 @@ export default function Filter() {
   return (
     <>
       <div className="p-3 flex justify-between  w-full">
-        <div className="w-3/5 flex items-center justify-between">
+        <div className="w-4/5  flex items-center justify-between">
           <div>
           <div>
             <img
@@ -172,7 +172,7 @@ export default function Filter() {
                         })}
                         </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px", width :"298px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       
                       <img src={CaretDown} className="h-3 w-3  text-black"
@@ -187,7 +187,7 @@ export default function Filter() {
                                   <img
                                     src={person.avatar}
                                     alt=""
-                                    className="inline-block h-8 w-8 rounded-full border-2 border-green-900 ring-2 ring-white"
+                                    className="inline-block shadow-3xl rounded-full h-8 w-8  border-2 border-dark-green ring-2 ring-white"
                                   />
                                 </div>
                               );
@@ -195,7 +195,7 @@ export default function Filter() {
                           })}
 
                           {selectedTalents.length > 5 && (
-                            <p className="inline-block h-8 w-8 rounded-full border-2 border-red-500 text-center pt-1 text-white bg-red-300 ">
+                            <p className="inline-block h-8 w-8 rounded-full border-2 text-center pt-1 text-white bg-dark-green ">
                               +{selectedTalents.length - 5}
                             </p>
                           )}
@@ -211,7 +211,7 @@ export default function Filter() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute top-12 z-10 mt-1 max-h-80 w-full  rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="shadow-3xl p-6 absolute top-12 z-10 mt-1 max-h-96 w-full  rounded-md bg-white py-1  text-base  ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     <div className="p-3 text-gray-800">Filter Talents</div>
                       
                       <Listbox.Option
@@ -220,7 +220,7 @@ export default function Filter() {
                             active
                               ? "bg-transparent text-gray-900"
                               : "text-gray-900",
-                            "relative cursor-default select-none py-2 pl-3 pr-9"
+                            "relative cursor-default select-none py-2 pl-5 pr-9"
                           )
                         }
                         value={{ id: 0, name: "all", avatar: "" }}
@@ -238,8 +238,7 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-                                   <img src={chekBox} className="h-5 w-5"/>
-                                  
+                                  <img src={chekBox} className="h-5 w-5"/>
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -267,18 +266,18 @@ export default function Filter() {
                                     selected
                                       ? "font-semibold"
                                       : "font-normal",
-                                    "ml-3 block truncate"
+                                    "ml-2 block truncate"
                                   )}
                                 >
-                                  <p className="font-semibold">Show All ({people.length} People)</p>
+                                  <p className="font-semibold text-base">Show All ({people.length} Talents)</p>
                                 </span>
                               </div>
                             </>
                           );
                         }}
                       </Listbox.Option>
-                      <hr class="my-3 h-0.5 border-0 bg-gray-400 opacity-20" />
-                      <div className="scroll-bar overflow-auto h-44">
+                      <hr class="my-3 h-0.5  border-0 bg-gray-400 opacity-20" />
+                      <div className="scroll-bar overflow-auto h-64">
                       {people.map((person) => (
                         <Listbox.Option
                           key={person.id}
@@ -287,7 +286,7 @@ export default function Filter() {
                               active
                                 ? "bg-transparent text-gray-900"
                                 : "text-gray-900",
-                              "relative cursor-default select-none py-5 pl-3 pr-9"
+                              "relative cursor-default select-none py-2 pl-5 pr-9"
                             )
                           }
                           value={person}
@@ -303,8 +302,7 @@ export default function Filter() {
                                     "absolute inset-y-0 left-0 flex items-center pl-3"
                                   )}
                                 >
-
-                                  <img src={chekBox} className="h-5 w-5"/>
+                                   <img src={chekBox} className="h-5 w-5"/>
                                 </span>
                               ) : null}
                               {!selected ? (
@@ -330,14 +328,14 @@ export default function Filter() {
                                 <img
                                   src={person.avatar}
                                   alt=""
-                                  className="h-9 w-9 flex-shrink-0 border-2 border-green-900 rounded-full"
+                                  className="h-9 w-9 flex-shrink-0 border-4 border-dark-green rounded-full border-"
                                 />
                                 <span
                                   className={classNames(
                                     selected
                                       ? "font-semibold"
                                       : "font-normal",
-                                    "ml-3 block truncate"
+                                    "ml-4 block truncate text-base"
                                   )}
                                 >
                                   {person.name}
@@ -377,7 +375,7 @@ export default function Filter() {
                         })}
                         </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px", width :"298px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                     <img src={CaretDown} className="h-3 w-3  text-black"
                         aria-hidden="true"/>
@@ -388,7 +386,7 @@ export default function Filter() {
                           if (index <= 4) {
                             return (
                               <div>
-                                <p className="inline-block h-8 w-8 pt-1 rounded-full border-2 shadow-black  drop-shadow-lg border-red-500 text-center  text-white bg-red-300 ">
+                                <p  className="inline-block h-8 w-8 pt-1 rounded-full border-2  border-red-500 text-center  text-white bg-red-300 ">
                               {getAvatar(person.name)}
                             </p>
                               </div>
@@ -413,7 +411,7 @@ export default function Filter() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute top-12 z-10 mt-1 max-h-80 w-full  rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="shadow-3xl p-6 absolute top-12 z-10 mt-1 max-h-96 w-full  rounded-md bg-white py-1  text-base  ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     <div className="p-3 text-gray-800">Filter By Manager</div>
                       
                       <Listbox.Option
@@ -422,7 +420,7 @@ export default function Filter() {
                             active
                               ? "bg-transparent text-gray-900"
                               : "text-gray-900",
-                            "relative cursor-default select-none py-2 pl-3 pr-9"
+                            "relative cursor-default select-none py-2 pl-5 pr-9"
                           )
                         }
                         value={{ id: 0, name: "all", avatar: "" }}
@@ -468,18 +466,18 @@ export default function Filter() {
                                     selected
                                       ? "font-semibold"
                                       : "font-normal",
-                                    "ml-3 block truncate"
+                                    "ml-2 block truncate"
                                   )}
                                 >
-                                  <p className="font-semibold">Show All ({people.length} Manager)</p>
+                                  <p className="font-semibold text-base">Show All ({people.length} Manager)</p>
                                 </span>
                               </div>
                             </>
                           );
                         }}
                       </Listbox.Option>
-                      <hr class="my-3 h-0.5 border-0 bg-gray-400 opacity-20" />
-                      <div className="scroll-bar overflow-auto h-44">
+                      <hr class="my-3 h-0.5  border-0 bg-gray-400 opacity-20" />
+                      <div className="scroll-bar overflow-auto h-64">
                       {people.map((person) => (
                         <Listbox.Option
                           key={person.id}
@@ -488,7 +486,7 @@ export default function Filter() {
                               active
                                 ? "bg-transparent text-gray-900"
                                 : "text-gray-900",
-                              "relative cursor-default select-none py-5 pl-3 pr-9"
+                              "relative cursor-default select-none py-2 pl-5 pr-9"
                             )
                           }
                           value={person}
@@ -537,7 +535,7 @@ export default function Filter() {
                                     selected
                                       ? "font-semibold"
                                       : "font-normal",
-                                    "ml-3 block truncate"
+                                    "ml-4 block truncate text-base"
                                   )}
                                 >
                                   {person.name}
@@ -563,7 +561,7 @@ export default function Filter() {
           >
             {({ open }) => (
               <>
-                <div className="relative flex items-center text-sm font-small whitespace-nowrap w-70  leading-6 text-gray-900">
+                <div className="relative flex items-center text-sm font-small whitespace-nowrap leading-6 text-gray-900">
                   Brands:
                   <span className="font-semibold">
                   {selectedBrands.map((person, index) => {
@@ -577,7 +575,7 @@ export default function Filter() {
                         })}
                         </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height :"40px", width :"200px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px",width:"298px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                     <img src={CaretDown} className="h-3 w-3  text-black"
                         aria-hidden="true"/>
@@ -613,8 +611,8 @@ export default function Filter() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Listbox.Options className="absolute top-12 z-10 mt-1 max-h-80 w-full  rounded-md bg-white py-1  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                    <div className="p-3 text-gray-800">Filter By Brand</div>
+                    <Listbox.Options className="shadow-3xl p-6 absolute top-12 z-10 mt-1 max-h-96 w-full  rounded-md bg-white py-1  text-base  ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <div className="p-3 text-gray-800">Filter By Brands</div>
                       
                       <Listbox.Option
                         className={({ active }) =>
@@ -622,7 +620,7 @@ export default function Filter() {
                             active
                               ? "bg-transparent text-gray-900"
                               : "text-gray-900",
-                            "relative cursor-default select-none py-2 pl-3 pr-9"
+                            "relative cursor-default select-none py-2 pl-5 pr-9"
                           )
                         }
                         value={{ id: 0, name: "all", avatar: "" }}
@@ -630,7 +628,7 @@ export default function Filter() {
                         {({ selected, active }) => {
                           return (
                             <>
-                              {selectedBrands.length ===
+                              {selectedManage.length ===
                               people.length ? (
                                 <span
                                   className={classNames(
@@ -668,18 +666,18 @@ export default function Filter() {
                                     selected
                                       ? "font-semibold"
                                       : "font-normal",
-                                    "ml-3 block truncate"
+                                    "ml-2 block truncate"
                                   )}
                                 >
-                                <p className="font-semibold">Show All ({people.length} Brands)</p>
+                                  <p className="font-semibold text-base">Show All ({people.length} Brands)</p>
                                 </span>
                               </div>
                             </>
                           );
                         }}
                       </Listbox.Option>
-                      <hr class="my-3 h-0.5 border-0 bg-gray-400 opacity-20" />
-                      <div className="scroll-bar overflow-auto h-44">
+                      <hr class="my-3 h-0.5  border-0 bg-gray-400 opacity-20" />
+                      <div className="scroll-bar overflow-auto h-64">
                       {people.map((person) => (
                         <Listbox.Option
                           key={person.id}
@@ -688,7 +686,7 @@ export default function Filter() {
                               active
                                 ? "bg-transparent text-gray-900"
                                 : "text-gray-900",
-                              "relative cursor-default select-none py-5 pl-3 pr-9"
+                              "relative cursor-default select-none py-2 pl-5 pr-9"
                             )
                           }
                           value={person}
@@ -727,17 +725,17 @@ export default function Filter() {
                                 className="flex items-center pl-7
                               "
                               >
-                                 <img
+                                <img
                                   src={person.avatar}
                                   alt=""
-                                  className="h-9 w-9 flex-shrink-0 border-4 border-green-900 rounded-full"
+                                  className="h-9 w-9 flex-shrink-0 border-4 border-green-900 rounded-full border-"
                                 />
                                 <span
                                   className={classNames(
                                     selected
                                       ? "font-semibold"
                                       : "font-normal",
-                                    "ml-3 block truncate"
+                                    "ml-4 block truncate text-base"
                                   )}
                                 >
                                   {person.name}

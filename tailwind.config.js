@@ -31,11 +31,19 @@ module.exports = {
       colors: {
         'peach': '#efb6b0',
         'beige' : '#dac58c',
-        'dark-green' : '#44554a'
+        'dark-green' : '#485f3b',
+        'light-blue':'#93b1d4'
       },
 
       gridTemplateColumns: {
         "1/5": "1fr 5fr"
+      },
+      boxShadow: {
+        '3xl': '0 35px 35px rgb(0, 0, 0,0.20)',
+        '4xl': [
+            '0 35px 35px rgba(0, 0, 0, 0.25)',
+            '0 45px 65px rgba(0, 0, 0, 0.15)'
+        ]
       }
     },
   },
