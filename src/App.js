@@ -24,7 +24,10 @@ function App() {
       
         {/* <CalendarHeader /> */}
         <div className="flex flex-1">
-          <Sidebar />
+          <div className="hidden sm:block">
+
+          <Sidebar/>
+          </div>
           <Month month={currenMonth} />
         </div>
       </div>
