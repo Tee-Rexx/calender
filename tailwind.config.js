@@ -27,12 +27,15 @@ module.exports = {
       fontFamily: {
         sans: ["Open Sans"]
       },
-      
-      colors: {
+      fontSize: {
+        xlg: ['24px', '26px'],
+      }
+      ,colors: {
         'peach': '#efb6b0',
         'beige' : '#dac58c',
         'dark-green' : '#485f3b',
-        'light-blue':'#93b1d4'
+        'light-blue':'#93b1d4',
+        'cream':'#faf4ee'
       },
 
       gridTemplateColumns: {

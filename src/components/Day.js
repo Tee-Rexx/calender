@@ -24,6 +24,11 @@ export default function Day({ day, rowIdx }) {
       ? "bg-peach text-white justify-center float-right items-end p-2 flex-end flex rounded-full w-9"
       : "";
   }
+  function getCurrentDayClassMob(){
+    return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
+      ? "bg-peach text-white "
+      : "text-black";
+  }
   function getAvatar(name) {
     const avatar = [];
     const s = name.split(" ");
@@ -34,22 +39,22 @@ export default function Day({ day, rowIdx }) {
     }
   }
   return (
-    <div className="border-none mt-2  border-gray-200 flex flex-col sm:border">
+    <div className="mt-2 h-16 border-gray-200 flex flex-col  md:border justify-center ">
       <header
-        className="flex flex-col items-center"
-        style={{ backgroundColor: "#faf4ee" }}
+        className="flex flex-col items-center md:bg-cream"
+        
       >
         {rowIdx === 0 && (
           <>
             <p
               style={{ color: "#44554a" }}
-              className=" font-semibold text-sm mt-1 hidden sm:block"
+              className=" font-semibold text-sm mt-1 hidden md:block"
             >
               {day.format("dddd")?.toUpperCase()}
             </p>
             <p
               style={{ color: "#44554a" }}
-              className=" font-semibold text-sm mt-1  sm:hidden"
+              className=" font-semibold text-xs mt-1  md:hidden"
             >
               {day.format("ddd")?.toUpperCase()}
             </p>
@@ -57,7 +62,7 @@ export default function Day({ day, rowIdx }) {
         )}
       </header>
 
-      <div className="hidden sm:block">
+      <div className="hidden md:block">
         <p
           style={{ color: "#44554a" }}
           className={`text-sm font-semibold p-1  items-end text-center   ${getCurrentDayClass()}`}
@@ -65,11 +70,10 @@ export default function Day({ day, rowIdx }) {
           {day.format("D")}
         </p>
       </div>
-      <div className="block sm:hidden">
+      <div className="md:hidden">
         <p
           style={{ color: "#44554a" }}
-          className={`text-base mt-2 font-semibold items-end text-center border-2 border-peach  p-3  rounded-full w-5"`}
-        >
+          className={`text-base mt-2 font-semibold  circle text-center border border-peach  p-2  rounded-full ${getCurrentDayClassMob()}`}>
           {day.format("D")}
         </p>
       </div>
@@ -80,7 +84,7 @@ export default function Day({ day, rowIdx }) {
           position: "relative",
           height: "100%",
         }}
-        className="flex-row hidden sm:flex"
+        className="flex-row hidden md:flex"
       >
         <div
           style={{

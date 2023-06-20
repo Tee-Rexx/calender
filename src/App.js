@@ -24,7 +24,7 @@ function App() {
       
         {/* <CalendarHeader /> */}
         <div className="flex flex-1">
-          <div className="hidden sm:block">
+          <div className="hidden md:block">
 
           <Sidebar/>
           </div>

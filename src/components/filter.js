@@ -136,7 +136,7 @@ export default function Filter() {
 
   return (
     <>
-      <div className="p-3  justify-between  w-full hidden sm:flex">
+      <div className="p-3  justify-between  w-full hidden md:flex">
         <div className="w-4/5  flex items-center justify-between">
           <div>
           <div>

@@ -70,7 +70,7 @@ export default function CalendarHeader() {
 
   return (
     <>
-      <header className="px-0 py-2 items-center hidden sm:flex ">
+      <header className="px-0 py-2 items-center hidden md:flex ">
         {/* <button >
         <span className="material-icons-outlined cursor-pointer text-gray-600 mx-2 my-2">
           chevron_left
@@ -106,7 +106,7 @@ export default function CalendarHeader() {
       </header>
       <div
         style={{ border: "1px solid #dac58c" }}
-        className="w-full items-center text-center justify-center  h-10 mt-2 hidden sm:flex"
+        className="w-full items-center text-center justify-center  h-10 mt-2 hidden md:flex"
       >
         <p
           className="text-lg font-semibold"
@@ -117,10 +117,10 @@ export default function CalendarHeader() {
         </p>
       </div>
 
-      <header className="px-3 py-2 items-center flex justify-between sm:hidden ">
+      <header className="px-3 py-2 items-center flex justify-between md:hidden ">
         <div className="px-0 py-2 items-center flex">
         <p
-          className="text-lg font-semibold"
+          className="text-xl whitespace-nowrap font-bold capitalize"
           style={{ color: "#44554a" }}
         >
           {" "}
@@ -146,10 +146,10 @@ export default function CalendarHeader() {
         <div className="flex">
           <img
           src={sun}
-          width={15}
-          height={15}
+          width={12}
+          height={12}
           />
-          <p className="p-2 text-sm underline decoration-peach text-peach">
+          <p className="p-2 whitespace-nowrap text-sm underline decoration-peach text-peach">
             Vacation time
           </p>
         </div>
