@@ -117,7 +117,7 @@ export default function CalendarHeader() {
         </p>
       </div>
 
-      <header className="px-3 py-2 items-center flex justify-between md:hidden ">
+      <header className="px-3 py-2 w-full items-center flex justify-between md:hidden ">
         <div className="px-0 py-2 items-center flex">
         <p
           className="text-xl whitespace-nowrap font-bold capitalize"

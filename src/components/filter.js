@@ -172,16 +172,16 @@ export default function Filter() {
                         })}
                         </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height :"40px", width :"298px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px"}} className="relative w-full width-button border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                       
                       <img src={CaretDown} className="h-3 w-3  text-black"
                         aria-hidden="true"/>
                     </span>
-                    <span className="flex items-center ml-3">
+                    <span className="flex items-center ml-3 avatar-display">
                     <div className="flex -space-x-2 overflow-hidden">
                           {selectedTalents.map((person, index) => {
-                            if (index <= 4) {
+                            if (index <= 2) {
                               return (
                                 <div>
                                   <img
@@ -194,9 +194,9 @@ export default function Filter() {
                             }
                           })}
 
-                          {selectedTalents.length > 5 && (
+                          {selectedTalents.length >2 && (
                             <p className="inline-block h-8 w-8 rounded-full border-2 text-center pt-1 text-white bg-dark-green ">
-                              +{selectedTalents.length - 5}
+                              +{selectedTalents.length - 3}
                             </p>
                           )}
                         </div>
@@ -375,15 +375,15 @@ export default function Filter() {
                         })}
                         </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height :"40px", width :"298px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px"}} className="width-button relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                     <img src={CaretDown} className="h-3 w-3  text-black"
                         aria-hidden="true"/>
                     </span>
-                    <span className="flex items-center ml-3">
+                    <span className="flex items-center ml-3 avatar-display">
                     <div className="flex -space-x-2 overflow-hidden">
                       {selectedManage.map((person, index) => {
-                          if (index <= 4) {
+                          if (index <= 3) {
                             return (
                               <div>
                                 <p  className="inline-block h-8 w-8 pt-1 rounded-full border-2  border-red-500 text-center  text-white bg-red-300 ">
@@ -394,9 +394,9 @@ export default function Filter() {
                           }
                         })}
 
-                        {selectedManage.length > 5 && (
+                        {selectedManage.length > 3 && (
                           <p  className="inline-block h-8 w-8 pt-1 rounded-full text-center shadow-black border-2 drop-shadow-lg border-red-500  text-white bg-red-300">
-                            +{selectedManage.length - 5}
+                            +{selectedManage.length - 4}
                           </p>
                         )}
                       </div>
@@ -575,15 +575,15 @@ export default function Filter() {
                         })}
                         </span>
                 <div className="relative mt-2 col-span-3">
-                  <Listbox.Button style={{height :"40px",width:"298px"}} className="relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
+                  <Listbox.Button style={{height :"40px"}} className="width-button relative w-full border-none d-flex  bg-white py-1.5 pl-3 p-3 text-left text-gray-900 sm:text-sm sm:leading-6">
                     <span className="pointer-events-none absolute inset-y-0 left-0  flex items-center">
                     <img src={CaretDown} className="h-3 w-3  text-black"
                         aria-hidden="true"/>
                     </span>
-                    <span className="flex items-center ml-3">
+                    <span className="flex items-center ml-3 avatar-display">
                     <div className="flex -space-x-2 overflow-hidden">
                       {selectedBrands.map((person, index) => {
-                          if (index <= 4) {
+                          if (index <= 3) {
                             return (
                               <div>
                                 <p className="inline-block h-8 w-8 pt-1 rounded-full border-2 shadow-black  drop-shadow-lg border-red-500 text-center  text-white bg-red-300 ">
@@ -594,9 +594,9 @@ export default function Filter() {
                           }
                         })}
 
-                        {selectedBrands.length > 5 && (
+                        {selectedBrands.length > 4 && (
                           <p  className="inline-block h-8 w-8 pt-1 rounded-full text-center shadow-black border-2 drop-shadow-lg border-red-500  text-white bg-red-300">
-                            +{selectedBrands.length - 5}
+                            +{selectedBrands.length - 4}
                           </p>
                         )}
                       </div>
@@ -758,7 +758,7 @@ export default function Filter() {
         <div> <input
             type="text"
             id="first_name"
-            class="col-start-2 w-50 nosubmit  text-gray-500 text-sm rounded-lg border-2 border-yellow-100 ring-yellow-100 focus:border-2 focus:border-yellow-100 focus:ring-yellow-100"
+            class="col-start-2 w-40 nosubmit  text-gray-500 text-sm rounded-lg border-2 border-yellow-100 ring-yellow-100 focus:border-2 focus:border-yellow-100 focus:ring-yellow-100"
             placeholder="@name"
           /></div>
       </div>

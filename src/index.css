@@ -82,8 +82,10 @@ form.nosubmit {
     height: 49px !important;
     width: 49px !important;
     padding-top: 11px;
-    margin-left: 6px;
-  }
+    }
+    .center-calender{
+      justify-items: center;
+    }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}
@@ -92,11 +94,27 @@ form.nosubmit {
   .circle{
     height: 52px !important;
     width: 52px !important;
-    margin-left: 28px;
     padding-top: 11px;
+  }
+  .center-calender{
+    justify-items: center;
   }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1440px) {
+  .width-button{
+    width:250px;
+    background: transparent
+  }
+}
+ @media only screen and (max-width: 1440px) and (min-width: 1023px) {
+  .width-button{
+    
+    background: transparent;
+  }
+  .avatar-display{
+    display: none;
+  }
+} 

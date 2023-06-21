@@ -39,7 +39,7 @@ export default function Day({ day, rowIdx }) {
     }
   }
   return (
-    <div className="mt-2 h-16 border-gray-200 flex flex-col  md:border justify-center ">
+    <div className="mt-2 h-16 border-gray-200 flex flex-col  md:h-full md:border justify-center ">
       <header
         className="flex flex-col items-center md:bg-cream"
         
@@ -65,16 +65,18 @@ export default function Day({ day, rowIdx }) {
       <div className="hidden md:block">
         <p
           style={{ color: "#44554a" }}
-          className={`text-sm font-semibold p-1  items-end text-center   ${getCurrentDayClass()}`}
+          className={`text-sm font-semibold p-1  items-end text-right   ${getCurrentDayClass()}`}
         >
           {day.format("D")}
         </p>
       </div>
-      <div className="md:hidden">
+      <div className=" md:hidden">
         <p
           style={{ color: "#44554a" }}
-          className={`text-base mt-2 font-semibold  circle text-center border border-peach  p-2  rounded-full ${getCurrentDayClassMob()}`}>
+          className={`relative text-base mt-2 font-semibold  circle text-center border border-peach  p-2  rounded-full ${getCurrentDayClassMob()}`}>
           {day.format("D")}
+          {dayEvents.length>=1 &&
+          (<div className="absolute bg-red-600 top-1 right-1 text-xs rounded-lg w-2 h-2"></div>)}
         </p>
       </div>
 
