@@ -2,6 +2,7 @@ import React from "react";
 import Day from "./Day";
 import Filter from "./filter";
 import CalendarHeader from "./CalendarHeader";
+import BottomSheet from "./BottomSheet";
 export default function Month({ month }) {
   return (
     <>
@@ -21,6 +22,9 @@ export default function Month({ month }) {
               ))}
             </React.Fragment>
           ))}
+        </div>
+        <div className="w-full h-auto fixed bottom-0">
+          <BottomSheet />
         </div>
       </div>
     </>

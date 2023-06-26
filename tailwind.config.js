@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 const labelsClasses = [
   "indigo",
   "gray",
@@ -53,5 +54,6 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
 }
+
+
