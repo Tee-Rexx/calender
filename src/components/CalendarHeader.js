@@ -22,14 +22,14 @@ export default function CalendarHeader() {
     setMonthIndex(monthIndex - 1);
     const monthYear = dayjs()
       .month(monthIndex - 1);
-    setSelectedMonthYear(monthYear.format("MMM YY"));
+    setSelectedMonthYear(monthYear.format("MMM YYYY"));
     setSelectedMonthYearMob(monthYear.format("MMMM YY"))
   }
   function handleNextMonth() {
     setMonthIndex(monthIndex + 1);
     const monthYear = dayjs()
       .month(monthIndex + 1);
-    setSelectedMonthYear(monthYear.format("MMM YY"));
+    setSelectedMonthYear(monthYear.format("MMM YYYY"));
     setSelectedMonthYearMob(monthYear.format("MMMM YY"))
   }
 
@@ -42,6 +42,9 @@ export default function CalendarHeader() {
       const monthYearText = currentMonthYear
         .add(i, "month")
         .format("MMM YY");
+        const monthYearTextFull = currentMonthYear
+        .add(i, "month")
+        .format("MMM YYYY");
       const monthNumeric = currentMonthYear
         .add(i, "month")
         .format("M");
@@ -50,6 +53,7 @@ export default function CalendarHeader() {
         .format("YYYY");
       yearsList.push({
         text: monthYearText,
+        fullText: monthYearTextFull,
         monthIndex: monthNumeric,
         yearIndex: yearNumeric,
       });
@@ -60,7 +64,7 @@ export default function CalendarHeader() {
 
   const keyChange = (data) => {
     setMonthIndex(parseInt(data?.monthIndex) - 1);
-    setSelectedMonthYear(data?.text);
+    setSelectedMonthYear(data?.fullText);
     setYearIndex(parseInt(data?.yearIndex));
   };
 
@@ -89,7 +93,7 @@ export default function CalendarHeader() {
             <h3
               style={{ color: "#44554a" }}
               onClick={() => keyChange(val)}
-              className="ml-2 font-semibold mr-2 text-lg cursor-pointer"
+              className={`ml-2 font-semibold mr-2 text-lg cursor-pointer ${val.fullText===selectedMonthYear?"underline underline-offset-8":""}`}
             >
               {val?.text}
             </h3>

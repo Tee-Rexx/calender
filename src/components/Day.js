@@ -2,15 +2,17 @@ import dayjs from "dayjs";
 import React, { useContext, useState, useEffect } from "react";
 import GlobalContext from "../context/GlobalContext";
 import plus from "../assets/Icon ionic-ios-add-circle-outline.svg";
+import BottomSheet from "./BottomSheet";
 export default function Day({ day, rowIdx }) {
   const [dayEvents, setDayEvents] = useState([]);
+  const [isOpen, setIsOpen] = useState(true);
   const {
     setDaySelected,
     setShowEventModal,
     filteredEvents,
     setSelectedEvent,
   } = useContext(GlobalContext);
-  console.log({ filteredEvents });
+
   useEffect(() => {
     const events = filteredEvents.filter(
       (evt) =>
@@ -18,7 +20,7 @@ export default function Day({ day, rowIdx }) {
     );
     setDayEvents(events);
   }, [filteredEvents, day]);
-
+  const [expanded, setExpanded] = useState(false);
   function getCurrentDayClass() {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
       ? "bg-peach text-white justify-center float-right items-end p-2 flex-end flex rounded-full w-9"
@@ -38,7 +40,19 @@ export default function Day({ day, rowIdx }) {
       return name[0]?.toUpperCase();
     }
   }
+  const handleOpen = () => {
+    if(!expanded){
+        setExpanded(true);
+        // setIsOpen(!isOpen) 
+    }else{
+        setExpanded(false);
+        // setIsOpen(!isOpen)
+    }
+    // 
+};
+  
   return (
+    <>
     <div className="mt-2 h-16 border-gray-200 flex flex-col  md:h-full md:border justify-center ">
       <header
         className="flex flex-col items-center md:bg-cream"
@@ -71,7 +85,7 @@ export default function Day({ day, rowIdx }) {
         </p>
       </div>
       <div className=" md:hidden">
-        <p
+        <p onClick={handleOpen}
           style={{ color: "#44554a" }}
           className={`relative text-base mt-2 font-semibold  circle text-center border border-peach  p-2  rounded-full ${getCurrentDayClassMob()}`}>
           {day.format("D")}
@@ -122,6 +136,11 @@ export default function Day({ day, rowIdx }) {
           />
         </div>
       </div>
+
     </div>
+    <div className="w-full h-auto fixed bottom-0">
+          <BottomSheet />
+        </div>
+    </>
   );
 }
